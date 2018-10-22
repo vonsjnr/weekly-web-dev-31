@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>2 | weekly web dev challenges</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+
+
+<div class="container-fluid">
+
+    <nav class="navbar navbar-expand pl-0 py-0 fixed-top"> <!-- navbar nie fituje dobrze do wszystkich sekcji w kazdej responsywnosci-->
+        <ul class="navbar-nav mr-auto  offset-1">
+            <li class="nav-item active">
+                <a class="nav-link" href="#home"><img class="img-fluid" src="images/logo.png"></a> <!-- trzeba ustawic min-width dla elementu, bo znika na najmniejszej szerokosci -->
+            </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active"> <!-- po najechaniu kursorem elementy opadaja o 2px w dol (sprawcą border top)-->
+                <a class="nav-link" href="#home">home</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#about">about</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#services">services</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#gallery">gallery</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#blog">blog</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#contact">contact</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="row" id="home">
+        <div class="col-6 offset-1 col-sm-4 offset-sm-1">
+            <h2>Fresh Life</h2>
+            <span>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</span>
+            <button class="d-block mt-3 btn-org">get free now</button>
+        </div>
+    </div>
+
+    <div class="row" id="about">
+        <div class="col-6 col-sm-5 offset-6">
+            <h1 class="h1-wht">About Us</h1>
+            <span class="span-wht">Abore Cahee magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum. </span>
+            <span class="span-wht">Nim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore.</span>
+        </div>
+    </div>
+
+    <div class="row" id="services">
+        <div class="col-12 d-sm-none mt-4">
+            <h1 class="text-center h1-wht">Our Services</h1>
+        </div>
+        <div class="col-10 offset-1 col-sm-5 offset-sm-1 mb-5">
+            <ul class="list-unstyled label d-inline-block">
+                <li><img src="images/shop.png" class="float-right"></li><li class="text-center"><span class="span-serv">Online Shopping</span></li></ul>
+            <ul class="list-unstyled label d-inline-block">
+                <li><img src="images/quality.png" class="float-right"></li><li class="text-center"><span class="span-serv">Quality Product</span></li></ul>
+            <ul class="list-unstyled label d-inline-block">
+                <li><img src="images/delivery.png" class="float-right"></li><li class="text-center"><span class="span-serv">Domestic & International Delivery</span></li></ul>
+            <ul class="list-unstyled label d-inline-block">
+                <li><img src="images/organ.png" class="float-right"></li><li class="text-center"><span class="span-serv">Well Organized</span></li></ul>
+        </div>
+        <div class="col-sm-6 d-none d-sm-block">
+            <h1 class="text-center h1-wht">Our Services</h1>
+        </div>
+    </div>
+
+    <div class="row" id="gallery">
+        <div class="col-10 offset-1 mt-5 mb-5">
+            <div class="row text-center my-4">
+                <div class="col-8 offset-2">
+                    <h1 class="text-center">Gallery</h1>
+                    <span>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-10 offset-1 col-sm-8 offset-sm-0">
+                    <img class="img-fluid mt-4" src="images/gal1.png">
+                </div>
+                <div class="col-10 offset-1 col-sm-4 offset-sm-0">
+                    <img class="img-fluid mt-4" src="images/gal2.png">
+                    <img class="img-fluid mt-4" src="images/gal3.png">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-10 offset-1 col-sm-6 offset-sm-0">
+                    <img class="img-fluid mt-4" src="images/gal4.png">
+                </div>
+                <div class="col-10 offset-1 col-sm-6 offset-sm-0">
+                    <img class="img-fluid mt-4" src="images/gal5.png">
+                </div>
+            </div>
+            <button class="btn-blue d-block mx-auto my-4">view more</button>
+        </div>
+    </div>
+
+    <div class="row" id="subscribe">
+        <div class="col-5 offset-2 col-sm-5 offset-sm-1 mt-5">
+            <h4>Subscribe To Us</h4>
+            <span class="d-block">Dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</span>
+            <input class="d-inline mt-3" placeholder="Your email address...">
+        </div>
+        <div class="col-5 col-sm-6">
+            <button class="btn-green d-inline force-to-bottom">subscribe</button>
+        </div>
+    </div>
+
+    <div class="row" id="blog">
+        <div class="col-10 offset-1 mt-5 mb-5">
+            <div class="row text-center">
+                <div class="col-8 offset-2">
+                    <h1 class="text-center h1-wht">Blog</h1>
+                    <span class="span-wht">Dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit.</span>
+                </div>
+            </div>
+                <div class="row">
+                    <div class="col-10 offset-1 col-sm-4 offset-sm-0">
+                        <img class="d-block img-fluid  mt-4" src="images/blog1.png">
+                        <span class="blog-date px-1 py-0 text-center">20<br>nov</span>
+                        <div class="blog-a"><a class="nav-link" href="#blog">Green Smothies: Too Much of a Good Thing?</a></div>
+                    </div>
+                    <div class="col-10 offset-1 col-sm-4 offset-sm-0">
+                        <img class="d-block img-fluid mt-4" src="images/blog2.png">
+                        <span class="blog-date px-1 py-0 text-center">14<br>nov</span> <!-- <br/> znacznik dodany by przerwac span -->
+                        <div class="blog-a"><a class="nav-link" href="#blog">Growing Food and a "Thirst" for Innovation</a></div>
+                    </div>
+                    <div class="col-10 offset-1 col-sm-4 offset-sm-0">
+                        <img class="d-block img-fluid mt-4" src="images/blog3.png">
+                        <span class="blog-date px-1 py-0 text-center">10<br>nov</span>
+                        <div class="blog-a"><a class="nav-link" href="#blog">Pesticides & Food: What You Need to Know</a></div>
+                    </div>
+                </div>
+            <button class="btn-red d-block mx-auto mt-4">view more</button>
+        </div>
+    </div>
+
+    <div class="row" id="contact">
+        <div class="col-10 offset-1 mt-5 mb-5">
+            <div class="row text-center">
+                <div class="col-10 offset-1 col-sm-6 offset-sm-3">
+                    <h1 class="text-center">Contact</h1>
+                    <span>For new projects, ideas, business or anything
+                    you'd like to discuss, contact with me!</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 mt-3">
+                    <input class="d-block mt-2 mb-2 py-2 pl-3" placeholder="Your name...">
+                    <input class="d-block mt-2 mb-2 py-2 pl-3" placeholder="Your email...">
+                    <input class="d-block mt-2 mb-2 py-2 pl-3" placeholder="Your phone number...">
+                    <textarea class="d-block mt-2 mb-2 py-2 pl-3 input-message" placeholder="Your message..."></textarea>
+                </div>
+                <div class="col-sm-4 offset-sm-1 mt-3">
+                    <span class="d-block mt-1 mb-1 span-bold ">address</span>
+                    <span class="d-block mt-1 mb-1">123 City name, Street, City, Country</span>
+                    <span class="d-block mt-1 mb-1 span-bold ">email</span>
+                    <span class="d-block mt-1 mb-1">cahee@domain.com</span>
+                    <span class="d-block mt-1 mb-1 span-bold ">phone</span>
+                    <span class="d-block mt-1 mb-1">+012 345 6789</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" id="footer">
+        <div class="col-5 text-center py-3"><span class="span-grey">&copy; 2015 Company. All right reserved.</span></div>
+        <div class="col-2 text-center py-3"><img src="images/logo-small.png"> </div>
+        <div class="col-5 text-center py-3 d-inline"><span class="span-grey d-inline">Made with <span class="d-inline span-love">love</span> by Auskteez.</span></div>
+    </div>
+
+
+</div>
+</body>
+</html>
