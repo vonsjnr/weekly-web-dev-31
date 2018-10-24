@@ -1,0 +1,73 @@
+@mixin bgimgproperties{
+  background-repeat:no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+@media (max-width: 575px) {
+  .relax {
+    background-image: url("../images/relaxbg.png");
+    @include bgimgproperties;
+    .relax_cont {
+      position: relative;
+      display: inline-block;
+      margin: 1rem 2rem;
+    }
+    .gear {
+      display: none;
+    }
+  }
+}
+@media (min-width: 576px) {
+
+  .relax {
+    background-image: url("../images/aboutbg.png");
+    @include bgimgproperties;
+    .relax_cont {
+      position: relative;
+      display: inline-block;
+      width: 50%;
+    }
+    .gear {
+      position: relative;
+      display: inline-block;
+      width: 33%;
+    }
+    .checkboxes {
+      width: 80%; //do weryfikacji czy dodajemy
+    }
+  }
+}
+@media (min-width: 768px) {
+}
+@media (min-width: 992px) {
+}
+@media (min-width: 1200px) {
+}
+html, body
+{
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+h1, h3, h5 {
+text-transform: uppercase;
+}
+.home {
+  h1 {
+    margin: 0;
+  }
+  text-align: center;
+  @include bgimgproperties;
+  background-image: url("../images/homebg.png");
+  box-shadow: inset 0 0 0 1000px rgba(0,0,0,.6);
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.services {
+  text-align: center;
+  .designs, .web, .tools {
+    display:inline-block;
+    width: 25%;
+  }
+}
