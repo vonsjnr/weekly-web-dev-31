@@ -1,10 +1,46 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
+
+
 @mixin bgimgproperties{
   background-repeat:no-repeat;
   background-size: cover;
   background-position: center;
 }
+@mixin big_subtitle_fontsize {
+  font-size: 1.3rem;
+}
+@mixin small_subtitle_fontsize {
+  font-size: .95rem;
+}
+@mixin lightgrey {
+  color: #cccccc;
+}
+@mixin darkgrey {
+  color: #b6b6b6;
+}
+@mixin green_bg {
+  background-color: #7cc576;
+}
+@mixin green_clr {
+  color: #7cc576;
+}
+@mixin btn_prop {
+  color: white;
+  background-color: #7cc576;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  transform: scale(1, .9);
+}
 
 @media (max-width: 575px) {
+  h1 {
+    font-size: 2.4rem;
+    padding-top: 1rem;
+  }
+  h2 {
+    font-size: 1.6rem;
+  }
   .relax {
     background-image: url("../images/relaxbg.png");
     @include bgimgproperties;
@@ -17,57 +53,327 @@
       display: none;
     }
   }
+  .p_grey, .p_darkgrey {
+    @include small_subtitle_fontsize;
+  }
+  .designs, .web, .tools {
+    display: inline-block;
+    width: 50%;
+  }
+  .project_list {
+    text-align: left;
+    max-width: 50%;
+  }
+  .project_int {
+    text-align: center;
+    max-width: 70%;
+  }
+  .culture {
+    .culture_div {
+      max-width: 90%;
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+  }
+  .clients {
+    .clients_img {
+      display: none;
+    }
+  }
+  .brands {
+    img {
+      margin: 1rem 3rem;
+    }
+  }
 }
 @media (min-width: 576px) {
-
+  h1 {
+  font-size: 3.6rem;
+  padding-top: 2rem;
+}
+  h2 {
+    font-size: 2.3rem;
+  }
+  .p_grey, .p_darkgrey {
+    @include big_subtitle_fontsize;
+  }
   .relax {
     background-image: url("../images/aboutbg.png");
     @include bgimgproperties;
     .relax_cont {
       position: relative;
       display: inline-block;
-      width: 50%;
+      width: 60%;
     }
     .gear {
       position: relative;
       display: inline-block;
       width: 33%;
     }
-    .checkboxes {
-      width: 80%; //do weryfikacji czy dodajemy
+  }
+  .designs, .web, .tools {
+    display:inline-block;
+    width: 25%;
+    margin: 1rem;
+  }
+  .project {
+  .project_int {
+    text-align: center;
+    max-width: 60%;
+    }
+  }
+  .culture {
+    .culture_div {
+      max-width: 65%;
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+  }
+  .clients {
+    .clients_img {
+      display: none;
+    }
+  }
+  .brands img {
+    margin: 1rem;
+  }
+  .contact {
+    .contact_div {
+      display: inline-block;
+      width: 85%;
     }
   }
 }
 @media (min-width: 768px) {
+  ul {
+    text-align: left;
+    width: 60%;
+  }
+  .project {
+    @include bgimgproperties;
+    background-image: url("../images/projectbg.jpg");
+  }
+  .project_list {
+    text-align: left;
+    width: 80%;
+  }
+  .project_int {
+    text-align: left;
+    max-width: 70%;
+  }
+  .culture {
+    .culture_div {
+      max-width: 28%;
+      display: inline-block;
+      margin: 1rem;
+      position: relative;
+    }
+    .quality_div::before {
+      content: "";
+      display: block;
+      width: 60%;
+      height: 2px;
+      position: absolute;
+      top: 22.5%;
+      left: -37.5%;
+      background-color: #777777;
+    }
+    .quality_div::after {
+      content: "";
+      display: block;
+      width: 60%;
+      height: 2px;
+      position: absolute;
+      top: 22.5%;
+      left: 77.5%;
+      background-color: #777777;
+    }
+  }
+.clients {
+  .clients_img {
+    display: inline-block;
+    vertical-align: middle;
 }
-@media (min-width: 992px) {
+  .clients_div {
+    display: inline-block;
+    vertical-align: middle;
+    max-width: 55%;
+  }
 }
-@media (min-width: 1200px) {
+  .contact {
+    .contact_div {
+      display: inline-block;
+      width: 31%;
+    }
+  }
 }
+
+///////////////////////////////////////////////////////
+
 html, body
 {
   height: 100%;
   margin: 0;
   padding: 0;
 }
-h1, h3, h5 {
+h1, h2, h3, h4, h5 {
 text-transform: uppercase;
 }
+h2, h5 {
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+}
+body {
+  font-family: Montserrat, sans-serif;
+}
+a, p, span {
+  font-family: "Roboto Slab", serif;
+}
+ul {
+  list-style-type: none;
+  margin: .3rem;
+  padding: 0;
+}
+li {
+  display: inline-block;
+  vertical-align: middle;
+  text-align: left;
+}
+.btn_rnd, .btn_rect {
+  @include btn_prop;
+  border-radius: 2rem;
+  border: 0;
+  padding: 1.3rem 1.5rem;
+  margin: 1.8rem 0;
+}
+.btn_rect {
+  padding: .8rem 1rem;
+  border: 2px solid white;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
 .home {
-  h1 {
-    margin: 0;
-  }
   text-align: center;
   @include bgimgproperties;
   background-image: url("../images/homebg.png");
   box-shadow: inset 0 0 0 1000px rgba(0,0,0,.6);
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  h1 {
+    margin: 0;
+  }
 }
 .services {
   text-align: center;
-  .designs, .web, .tools {
-    display:inline-block;
-    width: 25%;
+  margin: 2rem 0 2rem 0;
+}
+.relax {
+  @include lightgrey;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  .checkboxes_align {
+    vertical-align: 14px;
+    margin-left: 1rem;
   }
 }
+.project {
+  padding: 2.5rem 2rem;
+  text-align: center;
+}
+.culture {
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 2.5rem;
+  text-align: center;
+}
+.clients {
+  text-align: center;
+  margin: 2.5rem 0;
+  .clientsbg {
+    background-color: #f9f9f9;
+    padding: 2rem;
+    margin: 1rem;
+    span {
+      @include green_clr;
+      font-size: .9rem;
+    }
+  }
+}
+.green_contact {
+  @include green_bg;
+  text-align: center;
+  padding: 1rem;
+}
+.brands {
+  margin: 2rem;
+  text-align: center;
+  .brands_img {
+    display: inline-block;
+  }
+  img {
+    vertical-align: middle;
+  }
+}
+.contact {
+  padding: 2rem;
+  color: white;
+  background-color: #222222;
+  text-align: center;
+  div {
+  }
+  a, span {
+    color: white;
+    text-decoration: none;
+    vertical-align: 10px;
+    margin-left: .25rem;
+    font-size: .9rem;
+  }
+  a:visited {
+    text-decoration: none;
+  }
+  h5 {
+    margin-bottom: 1rem;
+  }
+  .contact_div {
+    margin: .4rem;
+    text-align: left;
+    vertical-align: top;
+    div {
+      margin: .3rem 0;
+    }
+  }
+}
+.a_grn {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: .9rem;
+  @include green_clr;
+}
+.a_grn:visited {
+  text-decoration: none;
+}
+.h_wht {
+  color: white;
+}
+.h_blk {
+  color: black;
+}
+.p_grey {
+  @include lightgrey;
+}
+.p_darkgrey {
+  @include darkgrey;
+  padding-top: 0;
+  margin: 0.5rem 0 1rem 0;
+}
+.p_darkgrey_info {
+  @include darkgrey;
+  margin-top: 0.5rem;
+  font-size: .75rem;
+  margin-bottom: .5rem;
+}
+.spnand {
+  color: #7cc576;
+}
+
