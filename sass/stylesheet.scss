@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
 
-
+// mixins
 @mixin bgimgproperties{
   background-repeat:no-repeat;
   background-size: cover;
@@ -33,6 +33,7 @@
   transform: scale(1, .9);
 }
 
+// media properties
 @media (max-width: 575px) {
   h1 {
     font-size: 2.4rem;
@@ -41,6 +42,19 @@
   h2 {
     font-size: 1.6rem;
   }
+  .navbar {
+     a {
+       margin: 0 .2rem;
+       font-size: .75rem;
+       vertical-align: -8px;
+     }
+    .img1 {
+      display: none;
+    }
+    .ul-left {
+      padding-left: .75rem;
+    }
+   }
   .relax {
     background-image: url("../images/relaxbg.png");
     @include bgimgproperties;
@@ -85,6 +99,12 @@
       margin: 1rem 3rem;
     }
   }
+  .footer {
+    text-align: center;
+    .footer_media {
+    margin-left: 1rem;
+    }
+  }
 }
 @media (min-width: 576px) {
   h1 {
@@ -93,6 +113,19 @@
 }
   h2 {
     font-size: 2.3rem;
+  }
+  .navbar {
+    a {
+      margin: 0 .5rem;
+      font-size: .75rem;
+      vertical-align: -8px;
+    }
+    .img2 {
+      display: none;
+    }
+    .ul-left {
+      padding-left: 1.7rem;
+    }
   }
   .p_grey, .p_darkgrey {
     @include big_subtitle_fontsize;
@@ -143,15 +176,28 @@
       width: 85%;
     }
   }
+  .footer {
+    text-align: center;
+    .footer_media {
+      margin-left: 1rem;
+    }
+  }
 }
 @media (min-width: 768px) {
-  ul {
-    text-align: left;
-    width: 60%;
+  .navbar {
+    a {
+      margin: 0 .9rem;
+      vertical-align: -9px;
+      font-size: .9rem;
+    }
   }
   .project {
     @include bgimgproperties;
     background-image: url("../images/projectbg.jpg");
+    ul {
+      text-align: left;
+      width: 60%;
+    }
   }
   .project_list {
     text-align: left;
@@ -206,10 +252,19 @@
       width: 31%;
     }
   }
+  .footer {
+    position: relative;
+    text-align: left;
+    .footer_media {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+      display: inline-block;
+    }
+  }
 }
 
-///////////////////////////////////////////////////////
-
+// content properties
 html, body
 {
   height: 100%;
@@ -223,21 +278,24 @@ h2, h5 {
   margin-top: 0.5rem;
   margin-bottom: 0;
 }
+html {
+  scroll-behavior: smooth;
+}
 body {
   font-family: Montserrat, sans-serif;
 }
 a, p, span {
   font-family: "Roboto Slab", serif;
 }
-ul {
-  list-style-type: none;
-  margin: .3rem;
-  padding: 0;
+.a_grn {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: .9rem;
+  @include green_clr;
 }
-li {
-  display: inline-block;
-  vertical-align: middle;
-  text-align: left;
+.a_grn:visited {
+  text-decoration: none;
 }
 .btn_rnd, .btn_rect {
   @include btn_prop;
@@ -252,12 +310,65 @@ li {
   border-radius: 8px;
   margin: 1rem 0;
 }
+.h_wht {
+  color: white;
+}
+.h_blk {
+  color: black;
+}
+.p_grey {
+  @include lightgrey;
+}
+.p_darkgrey {
+  @include darkgrey;
+  padding-top: 0;
+  margin: 0.5rem 0 1rem 0;
+}
+.p_darkgrey_info {
+  @include darkgrey;
+  margin-top: 0.5rem;
+  font-size: .75rem;
+  margin-bottom: .5rem;
+}
+.spnand {
+  color: #7cc576;
+}
+
+// section properties
+.navbar {
+  position: fixed;
+  background-color: white;
+  width: 100%;
+  border: 1px solid lightgray;
+  z-index: 1;
+  ul {
+    list-style-type: none;
+    display: inline-block;
+  }
+  li {
+    display: inline-block;
+  }
+  a {
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: Montserrat, sans-serif;
+    color: grey;
+    font-weight: 600;
+  }
+  a:hover {
+    @include green_clr;
+  }
+  .ul-right {
+    float: right;
+    margin-right: .5rem;
+  }
+}
 .home {
   text-align: center;
   @include bgimgproperties;
   background-image: url("../images/homebg.png");
   box-shadow: inset 0 0 0 1000px rgba(0,0,0,.6);
-  padding-top: 3rem;
+  padding-top: 4rem;
   padding-bottom: 3rem;
   h1 {
     margin: 0;
@@ -265,7 +376,7 @@ li {
 }
 .services {
   text-align: center;
-  margin: 2rem 0 2rem 0;
+  margin: 3rem 0 2rem 0;
 }
 .relax {
   @include lightgrey;
@@ -279,6 +390,19 @@ li {
 .project {
   padding: 2.5rem 2rem;
   text-align: center;
+  a {
+    font-family: Montserrat, sans-serif;
+  }
+  ul {
+    list-style-type: none;
+    margin: .3rem;
+    padding: 0;
+  }
+  li {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: left;
+  }
 }
 .culture {
   background-color: #f9f9f9;
@@ -343,37 +467,20 @@ li {
     }
   }
 }
-.a_grn {
-  text-decoration: none;
-  text-transform: uppercase;
-  font-weight: 600;
-  font-size: .9rem;
-  @include green_clr;
+.footer {
+  margin: 1rem 0;
+  .footer_media {
+    vertical-align: middle;
+  }
+  p {
+    font-family: Montserrat, sans-serif;
+    display: inline-block;
+    font-size: .65rem;
+    color: grey;
+    margin-left: 1rem;
+    font-weight: 600;
+  }
 }
-.a_grn:visited {
-  text-decoration: none;
-}
-.h_wht {
-  color: white;
-}
-.h_blk {
-  color: black;
-}
-.p_grey {
-  @include lightgrey;
-}
-.p_darkgrey {
-  @include darkgrey;
-  padding-top: 0;
-  margin: 0.5rem 0 1rem 0;
-}
-.p_darkgrey_info {
-  @include darkgrey;
-  margin-top: 0.5rem;
-  font-size: .75rem;
-  margin-bottom: .5rem;
-}
-.spnand {
-  color: #7cc576;
-}
+
+
 
